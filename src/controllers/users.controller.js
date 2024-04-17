@@ -11,9 +11,10 @@ exports.detailUser = async (req, res)=>{
     return res.render('users/detail', {title: "Detail Users", user, moment})
 }
 
-exports.addUser = async (req, res)=>{
-    await userModel.insert(req.body)
-    return res.redirect('/users', {title: "Add Users", userData: users})
+exports.insert = async (req, res)=>{
+    const users = await userModel.insert(req.body)
+    console.log(req.body)
+    return res.redirect("/users")
 }
 
 exports.editUser = async (req, res)=>{

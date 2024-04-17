@@ -26,6 +26,7 @@ exports.insert = async(data)=>{
     return rows[0]
 }
 
+
 exports.updateUser = async(id, data)=>{
     const sql = `
     UPDATE users SET 
